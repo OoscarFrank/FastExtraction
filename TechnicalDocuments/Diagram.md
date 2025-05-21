@@ -9,7 +9,6 @@ graph TD
     end
 
     subgraph User_Interaction
-        Raspberry[listen]
         User[User]
         Raspberry[Interaction with Raspberry Pi]
         UserText[User sends text]
