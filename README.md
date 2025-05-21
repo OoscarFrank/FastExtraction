@@ -28,6 +28,7 @@ Built with **Python** and powered by **Hugging Face's KBIR-inspec model**, this 
    ```bash
    git clone git@github.com:OoscarFrank/FastExtraction.git
    cd LLM
+   # check if the file is correctly there
    ```
 
 2. **Setup environment & run model**  
