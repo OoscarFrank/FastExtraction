@@ -56,7 +56,7 @@ Built with **Python** and powered by **Hugging Face's KBIR-inspec model**, this 
 .
 ├── LLM/                    # AI file
 ├── LandingFastExtraction/  # Landing page
-│   ├── ...                 # Landing files
+│   ├── ...
 └── Pub                     # Folder with our advertising
 ```
 
