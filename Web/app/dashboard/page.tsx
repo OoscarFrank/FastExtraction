@@ -24,7 +24,7 @@ export default function DashboardPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5000/data");
+        const response = await fetch("http://127.0.0.1:4000/data");
 
         if (!response.ok) {
           throw new Error("Failed to fetch data");

@@ -134,6 +134,29 @@ const App: React.FC = () => {
     };
   }, []);
 
+  const sendAnalysisToServer = async (analysisData: Analysis) => {
+    if (!analysisData) return;
+
+    try {
+      const response = await fetch('https://1e39-86-106-2-22.ngrok-free.app/data', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(analysisData),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      console.log('Server response:', result);
+    } catch (error) {
+      console.error('Error sending analysis to server:', error);
+    }
+  };
+
   const onSpeechResults = (e: any) => {
     const t = e.value?.[0];
     if (t) setRecordedText(t);
@@ -266,7 +289,12 @@ const App: React.FC = () => {
       const summary = parsedResult.summary || 'No summary available.';
       const keywords = parsedResult.keywords || [];
 
-      setAnalysisResult({ summary, keywords });
+      const analysisData = { summary, keywords };
+      setAnalysisResult(analysisData);
+
+      // Envoyer les résultats au serveur
+      await sendAnalysisToServer(analysisData);
+
     } catch (error) {
       setAnalysisResult({ summary: 'Error during analysis: ' + error, keywords: [] });
     } finally {

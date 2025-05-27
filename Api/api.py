@@ -1,8 +1,15 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import datetime
 
 app = Flask(__name__)
-CORS(app)  # Activer CORS pour toutes les routes
+CORS(app, resources={
+    r"/data*": {
+        "origins": ["*"],  # Autoriser toutes les origines
+        "methods": ["GET", "POST", "OPTIONS"],  # Autoriser ces méthodes
+        "allow_headers": ["Content-Type"]
+    }
+})
 
 data_store = []
 current_id = 0  # Index global pour attribuer des IDs uniques
@@ -27,24 +34,51 @@ def get_data_detail(item_id):
 @app.route('/data', methods=['POST'])
 def post_data():
     """
-    Route POST : ajoute de nouvelles données dans le data_store.
+    Route POST : reçoit du JSON brut et l'ajoute au data_store
+    Version corrigée avec gestion d'erreur améliorée
     """
     global current_id
-    data = request.get_json()
+    
+    # Vérification du Content-Type
+    if not request.is_json:
+        return jsonify({"error": "Le contenu doit être au format JSON"}), 415
+    
+    try:
+        data = request.get_json(force=True)  # Force le parsing même sans header
+        
+        # Validation des données
+        if not data or 'summary' not in data or 'keywords' not in data:
+            return jsonify({
+                "error": "Structure JSON invalide",
+                "requis": {
+                    "summary": "string",
+                    "keywords": ["array", "of", "strings"]
+                }
+            }), 400
 
-    if not all(key in data for key in ['summary', 'keywords']):
-        return jsonify({"error": "Les champs 'summary' et 'keywords' sont obligatoires."}), 400
+        # Traitement des données
+        new_entry = {
+            "id": current_id,
+            "summary": data["summary"],
+            "keywords": data["keywords"],
+            "timestamp": datetime.datetime.now().isoformat()  # Bonus: ajout d'un timestamp
+        }
+        
+        data_store.append(new_entry)
+        current_id += 1
+        
+        # Réponse détaillée
+        return jsonify({
+            "status": "success",
+            "id": new_entry["id"],
+            "created_at": new_entry["timestamp"]
+        }), 201
 
-    # Conserver uniquement 'summary' et 'keywords' et attribuer un ID
-    filtered_data = {
-        "id": current_id,
-        "summary": data["summary"],
-        "keywords": data["keywords"]
-    }
-
-    data_store.append(filtered_data)
-    current_id += 1  # Incrémenter l'ID pour la prochaine entrée
-    return jsonify({"message": "Données ajoutées avec succès.", "data": filtered_data}), 201
-
+    except Exception as e:
+        return jsonify({
+            "error": "Erreur de traitement",
+            "details": str(e)
+        }), 500
+        
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='127.0.0.1', port=4000)
