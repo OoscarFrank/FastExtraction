@@ -1,8 +1,8 @@
-# **FastExtraction - Local AI for Mobile Phones**
+# **Rezum - Local AI for Mobile Phones**
 
 ## **📌 Overview**
 
-**FastExtraction** is a lightweight AI-powered tool that extracts relevant keywords and generates summaries from conversations. Designed for mobile phones, it operates entirely **locally via a React Native app**, ensuring privacy and offline functionality.
+**Rezum** is a lightweight AI-powered tool that extracts relevant keywords and generates summaries from conversations. Designed for mobile phones, it operates entirely **locally via a React Native app**, ensuring privacy and offline functionality.
 
 Built with **React Native** and powered by **Hugging Face's NLP models**, this tool delivers accurate keyword extraction and conversation summaries for professional and personal use cases.
 
@@ -30,8 +30,8 @@ Built with **React Native** and powered by **Hugging Face's NLP models**, this t
 1. **Clone the repository**
 
    ```bash
-   git clone git@github.com:OoscarFrank/FastExtraction.git
-   cd FastExtraction
+   git clone git@github.com:OoscarFrank/Rezum.git
+   cd Rezum
    ```
 
 2. **Setup the React Native environment**
@@ -119,4 +119,4 @@ MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
-**🎉 Happy FastExtraction!** 🚀
+**🎉 Happy Rezum!** 🚀
