@@ -41,6 +41,7 @@ Built with **React Native** and powered by **Hugging Face's NLP models**, this t
 3. **Install dependencies and run the app**
 
    ```bash
+   cd mobile
    npm install
    npm run start
    npm run android # or npm run ios
