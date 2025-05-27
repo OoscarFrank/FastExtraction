@@ -179,14 +179,14 @@ export default function LandingPage() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-purple-100 px-3 py-1 text-sm text-purple-700">
-                  Hardware Solution
+                  Mobile Application
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  Rezum Smart Recording Device
+                  Rezum Smart Recording App
                 </h2>
                 <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed">
-                  Get our dedicated Raspberry Pi-powered device for seamless
-                  conversation recording and analysis.
+                  Download our mobile application for seamless conversation
+                  recording and analysis on the go.
                 </p>
               </div>
             </div>
@@ -195,75 +195,104 @@ export default function LandingPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="order-2 lg:order-1">
                   <h3 className="text-2xl font-bold mb-4">
-                    Professional Recording Made Simple
+                    Recording in Your Pocket
                   </h3>
                   <p className="text-gray-600 mb-6">
-                    Our custom Raspberry Pi device comes pre-configured with
-                    Rezum software, offering plug-and-play conversation
-                    recording with automatic cloud sync and AI-powered analysis.
+                    Transform your smartphone into a powerful conversation
+                    analysis tool with our app, offering intelligent recording
+                    with automatic cloud sync and AI-powered analysis.
                   </p>
 
                   <div className="space-y-4 mb-8">
                     <div className="flex items-center gap-3">
                       <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
                       <span className="text-sm">
-                        High-quality microphone array for crystal clear audio
+                        Advanced noise cancellation for crystal clear audio
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
                       <span className="text-sm">
-                        Automatic WiFi sync to your Rezum dashboard
+                        Automatic cloud synchronization with your Rezum
+                        dashboard
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
                       <span className="text-sm">
-                        8-hour battery life for all-day recording
+                        Energy-efficient recording for extended sessions
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
                       <span className="text-sm">
-                        Secure local storage with cloud backup
+                        End-to-end encryption for maximum privacy
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
                       <span className="text-sm">
-                        One-touch recording with LED status indicators
+                        Simple interface with beautiful visualizations
                       </span>
                     </div>
                   </div>
 
-                  <div className="bg-gray-50 rounded-lg p-6 mb-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <div>
-                        <h4 className="text-xl font-bold">Rezum Device</h4>
-                        <p className="text-sm text-gray-500">
-                          Complete recording solution
-                        </p>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-2xl font-bold text-purple-600">
-                          $299
-                        </div>
-                        <div className="text-sm text-gray-500 line-through">
-                          $399
-                        </div>
-                      </div>
-                    </div>
-                    <div className="text-sm text-gray-600 mb-4">
-                      Includes device, charging cable, carrying case, and 6
-                      months of Rezum Pro service
-                    </div>
-                    <Button className="w-full" size="lg">
-                      Order Now - Free Shipping
-                    </Button>
-                    <p className="text-xs text-gray-500 text-center mt-2">
-                      30-day money-back guarantee • 2-year warranty
-                    </p>
+                  <div className="flex flex-col md:flex-row gap-4 mb-6">
+                    <Link
+                      href="https://apps.apple.com/download/rezum"
+                      className="flex-1"
+                    >
+                      <Button
+                        className="w-full flex items-center justify-center gap-2"
+                        size="lg"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M12 19c-4.3 0-7.3-3-7.3-6.5 0-3 2.5-5.5 5.5-5.5 2.5 0 4.3 1.5 4.8 3 .3-1.5 1.5-3 3.5-3 2 0 3.5 1.5 3.5 3.5 0 1-.3 2-.8 2.5" />
+                          <path d="M12 19c-2.5 0-4-1.5-4-3.5 0-2 1.5-3.5 3.5-3.5 1.5 0 2.5 1 2.8 2.5" />
+                          <path d="M12 21c-4.3 0-7.3-3-7.3-6.5 0-2 1-3.5 2.3-4.5" />
+                          <path d="M15 9c1-.3 2-.3 3-.3 2 0 3.5 1.5 3.5 3.5a4 4 0 0 1-4 4" />
+                        </svg>
+                        App Store
+                      </Button>
+                    </Link>
+                    <Link
+                      href="https://play.google.com/store/apps/details?id=com.rezum.app"
+                      className="flex-1"
+                    >
+                      <Button
+                        className="w-full flex items-center justify-center gap-2"
+                        size="lg"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <polygon points="5 3 19 12 5 21" />
+                        </svg>
+                        Google Play
+                      </Button>
+                    </Link>
                   </div>
+                  <p className="text-xs text-gray-500 text-center">
+                    Free download • Premium features available with subscription
+                  </p>
                 </div>
 
                 <div className="order-1 lg:order-2">
@@ -271,12 +300,12 @@ export default function LandingPage() {
                     <div className="bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl p-8 flex items-center justify-center">
                       <img
                         src="/placeholder.svg?height=300&width=400"
-                        alt="Rezum Raspberry Pi Recording Device"
+                        alt="Rezum Mobile App"
                         className="w-full max-w-sm h-auto rounded-lg shadow-lg"
                       />
                     </div>
                     <div className="absolute -bottom-4 -right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                      In Stock
+                      4.8 ★
                     </div>
                   </div>
                 </div>
