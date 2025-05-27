@@ -22,7 +22,7 @@ Built with **React Native** and powered by **Hugging Face's NLP models**, this t
 
 ---
 
-### **Campaign - Landing page**
+### **📢 Campaign - Landing page**
    ```bash
    cd Web
    npm i
