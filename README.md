@@ -11,12 +11,23 @@ Built with **React Native** and powered by **Hugging Face's NLP models**, this t
 ## **✨ Features**
 
 ✅ **Privacy-First** – All processing happens locally; no data leaves your device.
+
 ✅ **Mobile-Optimized** – Runs efficiently on modern smartphones.
+
 ✅ **No Internet Required** – Works completely offline.
+
 ✅ **Intuitive Workflow** – Record, analyze, and access results effortlessly.
+
 ✅ **Integration with Web Dashboard** – Syncs with a dashboard to view summaries, keywords, and history.
 
 ---
+
+### **📢 Campaign - Landing page**
+   ```bash
+   cd Web
+   npm i
+   npm run dev
+   ```
 
 ## **🚀 Quick Start**
 
@@ -41,7 +52,7 @@ Built with **React Native** and powered by **Hugging Face's NLP models**, this t
 3. **Install dependencies and run the app**
 
    ```bash
-   cd mobile
+   cd Mobile
    npm install
    npm run start
    npm run android # or npm run ios
@@ -50,14 +61,14 @@ Built with **React Native** and powered by **Hugging Face's NLP models**, this t
 4. **Run the web dashboard (optional)**
 
    ```bash
-   cd dashboard
+   cd Web
    npm install
-   npm run start
+   npm run dev
    ```
 
 5. **Run the api (optional)**
 ```bash
-   cd api
+   cd Api
    install -r requirements
    python3 api.py
 ```
