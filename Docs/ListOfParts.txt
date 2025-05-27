@@ -1,0 +1,2 @@
+- Mobile phone to run the app
+- Computer to run the api and the dashboard
