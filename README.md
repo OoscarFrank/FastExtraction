@@ -1,20 +1,20 @@
-# **Professional Keyword Extractor - Local AI for Raspberry Pi**
+# **FastExtraction - Local AI for Mobile Phones**
 
 ## **📌 Overview**
 
-**Professional Keyword Extractor** is a lightweight AI-powered tool that extracts relevant keywords from professional profiles, resumes, or business documents. It runs entirely **locally on a Raspberry Pi**, ensuring privacy and offline functionality.
+**FastExtraction** is a lightweight AI-powered tool that extracts relevant keywords and generates summaries from conversations. Designed for mobile phones, it operates entirely **locally via a React Native app**, ensuring privacy and offline functionality.
 
-Built with **Python** and powered by **Hugging Face's KBIR-inspec model**, this tool is optimized for efficiency on low-power devices while delivering accurate keyword extraction for professional use cases.
+Built with **React Native** and powered by **Hugging Face's NLP models**, this tool delivers accurate keyword extraction and conversation summaries for professional and personal use cases.
 
 ---
 
 ## **✨ Features**
 
-✅ **Privacy-First** – All processing happens locally; no data leaves your device.  
-✅ **Optimized for Raspberry Pi** – Runs efficiently on ARM-based hardware.  
-✅ **No Internet Required** – Works completely offline.  
-✅ **Easy-to-Usee** – Simple input/output workflow.  
-✅ **Powered by Hugging Face’s NLP** – Uses `ml6team/keyphrase-extraction-kbir-inspec` for high-quality keyword extraction.
+✅ **Privacy-First** – All processing happens locally; no data leaves your device.
+✅ **Mobile-Optimized** – Runs efficiently on modern smartphones.
+✅ **No Internet Required** – Works completely offline.
+✅ **Intuitive Workflow** – Record, analyze, and access results effortlessly.
+✅ **Integration with Web Dashboard** – Syncs with a dashboard to view summaries, keywords, and history.
 
 ---
 
@@ -22,9 +22,8 @@ Built with **Python** and powered by **Hugging Face's KBIR-inspec model**, this 
 
 ### **Where**
 
-- **Raspberry Pi** (Recommended: Pi 4 or Pi 5 with 4GB+ RAM)
-  **OR**
-- **Docker** environment
+* **React Native App** (iOS/Android)
+* **Web Dashboard**
 
 ### **Installation**
 
@@ -32,66 +31,68 @@ Built with **Python** and powered by **Hugging Face's KBIR-inspec model**, this 
 
    ```bash
    git clone git@github.com:OoscarFrank/FastExtraction.git
-   cd LLM
-   # check if the file is correctly there
+   cd FastExtraction
    ```
 
-2. **Setup environment & run model**
+2. **Setup the React Native environment**
+
+   Follow the [React Native environment setup guide](https://reactnative.dev/docs/environment-setup) for your platform.
+
+3. **Install dependencies and run the app**
+
    ```bash
-   1. docker run -it --platform linux/arm64 debian
-   2. python3 -m venv myenv
-   3. source myenv/bin/activate
-   4. pip install transformers
-   5. drop our file (summarizer.py)
-   7. python summarizer.py
+   cd mobile
+   npm install
+   npm run start
+   npm run android # or npm run ios
    ```
+
+4. **Run the web dashboard (optional)**
+
+   ```bash
+   cd dashboard
+   npm install
+   npm run start
+   ```
+
+5. **Run the api (optional)**
+```bash
+   cd api
+   install -r requirements
+   python3 api.py
+```
 
 ---
 
 ## **🔧 Steps**
 
-1. Download model
-2. Model is listening
-3. Enter your text and then press enter
-4. Model is thinking
-5. Keywords appear on screen
+1. Open the app and record a conversation.
+2. The AI processes the conversation locally, extracting keywords and generating a summary.
+3. View the results directly in the app or sync them with the web dashboard.
+4. Access the history of processed conversations via the dashboard.
 
 ---
 
-# Interaction Diagram: AI Model on Debian and Raspberry Pi
+# Interaction Diagram: AI Model on Mobile and Web Dashboard
 
 ```mermaid
 graph TD
     subgraph Local_Environment
-        Debian[Debian OS]
-        ModelDownload[Download AI model]
-        LocalRun[Run the AI model locally]
+        Phone[Phone with React Native App]
+        LocalAI[AI Model running locally]
+        UserInteraction[User records conversation]
     end
 
-    subgraph User_Interaction
-        User[User]
-        Raspberry[Interaction with Raspberry Pi]
-        UserText[User sends text]
-        RaspResponse[Raspberry Pi responds with a bullet list]
+    subgraph Cloud_Environment
+        API[API for synchronization]
+        Dashboard[Web Dashboard]
     end
 
-    Debian --> ModelDownload
-    ModelDownload --> LocalRun
-    User -->|Sends text| Raspberry
-    Raspberry -->|Responds with a bullet list| User
-    LocalRun --> Raspberry
-```
-
----
-
-## **📂 Project Structure**
-
-```plaintext
-.
-├── LLM/                    # AI file
-├── LandingFastExtraction/  # Landing page
-│   ├── ...
-└── Pub                     # Folder with our advertising
+    UserInteraction -->|Records| LocalAI
+    LocalAI -->|Processes locally| KeywordsAndSummary[Generates Keywords & Summary]
+    KeywordsAndSummary -->|Sends results| API
+    API -->|Syncs data| Dashboard
+    Dashboard -->|Displays results & history| User
 ```
 
 ---
@@ -104,18 +105,18 @@ MIT License. See [LICENSE](LICENSE) for details.
 
 ## **📬 Contact & Support**
 
-- **Names**:
-  - Oscar FRANK
-  - Younès BOUFRIOUA
-  - Théotime SCHMELTZ
+* **Names**:
+
+  * Oscar FRANK
+  * Younès BOUFRIOUA
+  * Théotime SCHMELTZ
 
 ---
 
 ## **🔗 Useful Links**
 
-- [Hugging Face Model Card](https://huggingface.co/ml6team/keyphrase-extraction-kbir-inspec)
-- [Raspberry Pi Optimization Guide](https://www.raspberrypi.com/documentation/)
+* [React Native Documentation](https://reactnative.dev/)
 
 ---
 
-**🎉 Happy Keyword Extraction!** 🚀
+**🎉 Happy FastExtraction!** 🚀
